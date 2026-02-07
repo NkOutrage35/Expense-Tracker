@@ -15,6 +15,7 @@ import SendMoney from "./pages/SendMoney";
 import TransactionItem from "./components/Cards/TransactionItem";
 import { TransactionAdder } from "./components/Cards/AddTransactions";
 import BillConfirmation from "./pages/BillConfirmation";
+import NotFound from "./pages/404";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
             <Route path="/transaction/:id" element={<TransactionDetails />} />
             <Route path="/bill/:id" element={<BillDetails />} />
             <Route path="/connect-wallet" element={<ConnectWallet />} />
+
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </div>

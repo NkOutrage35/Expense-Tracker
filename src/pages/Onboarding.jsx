@@ -20,9 +20,8 @@ const Onboarding = ({ onFinish }) => {
           Spend Smarter <br /> Save More
         </h2>
         <Link
-        to="/home"
-          
-          className="w-full max-w-lg bg-linear-to-r from-[#429690] to-[#2F7E79] text-white text-[1.05rem] py-5 px-32 rounded-full shadow-neutral-500 shadow-[0px_17px_40px_-10px_rgba(0,0,0,0.3)] hover:scale-125 transition-transform"
+          to="/home"
+          className="w-full max-w-lg bg-linear-to-r from-[#429690] to-[#2F7E79] text-white text-[1.05rem] py-5 px-24 rounded-full shadow-neutral-500 shadow-[0px_17px_40px_-10px_rgba(0,0,0,0.3)] hover:scale-125 transition-transform"
         >
           Get Started
         </Link>
