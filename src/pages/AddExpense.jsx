@@ -48,12 +48,12 @@ const AddExpense = ({ onBack, onAdd }) => {
       {/* Header */}
       <div className="sticky h-60">
         <img
-          src="/images/Rectangle 9.png"
+          src="/images/Rectangle9.png"
           className="absolute inset-0 w-full object-cover z-0"
           alt="bg"
         />
         <img
-          src="/images/Group 6.png"
+          src="/images/Group6.png"
           className="absolute inset-0 w-60 object-cover z-0"
           alt="decor"
         />

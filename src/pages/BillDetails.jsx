@@ -33,12 +33,12 @@ const BillDetails = ({ bill, onBack }) => {
     <div className="bg-[#429690] min-h-screen flex flex-col font-sans relative">
       <div className="relative h-64">
         <img
-          src="/images/Rectangle 9.png"
+          src="/images/Rectangle9.png"
           className="absolute inset-0 w-full h-full object-cover z-0"
           alt="bg"
         />
         <img
-          src="/images/Group 6.png"
+          src="/images/Group6.png"
           className="absolute inset-0 w-60 object-cover z-0 opacity-40"
           alt="decor"
         />
@@ -107,7 +107,7 @@ const BillDetails = ({ bill, onBack }) => {
             label="Paypal"
             icon={
               <img
-                src="/images/image 5.png"
+                src="/images/image5.png"
                 className="w-5 h-5"
                 alt="paypal"
               />

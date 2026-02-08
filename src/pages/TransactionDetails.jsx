@@ -35,12 +35,12 @@ const TransactionDetails = ({ transaction, onBack, navigate }) => {
     <div className="min-h-screen bg-white pb-24 font-sans">
       <div className="relative h-60">
         <img
-          src="/images/Rectangle 9.png"
+          src="/images/Rectangle9.png"
           className="absolute inset-0 w-full h-full object-cover"
           alt=""
         />
         <img
-          src="/images/Group 6.png"
+          src="/images/Group6.png"
           className="absolute inset-0 w-60 object-cover opacity-40"
           alt=""
         />

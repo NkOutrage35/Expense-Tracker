@@ -15,11 +15,11 @@ const Profile = ({ onBack, navigate }) => {
     <div>
       <div className="relative h-60">
         <img
-          src="/images/Rectangle 9.png"
+          src="/images/Rectangle9.png"
           className="absolute inset-0 w-full object-cover z-0"
         />
         <img
-          src="/images/Group 6.png"
+          src="/images/Group6.png"
           className="absolute inset-0 w-60 object-cover z-0"
         />
 
@@ -34,7 +34,7 @@ const Profile = ({ onBack, navigate }) => {
       </div>
 
       <div className="relative z-20 justify-center items-center flex flex-col -mt-12">
-        <img src="/images/Group 21.png" alt="" />
+        <img src="/images/Group21.png" alt="" />
         <h2 className="font-bold text-xl mt-2">John Doe</h2>
         <p className="text-[#429690]">john.doe@example.com</p>
       </div>
@@ -42,7 +42,7 @@ const Profile = ({ onBack, navigate }) => {
       <div className="space-y-4 p-6 mt-4">
         <div className="border-b border-gray-200 space-y-4 mt-4 flex items-center gap-8 p-4 bg-white hover:shadow-md transition cursor-pointer">
           <img
-            src="/images/diamond (dark).png"
+            src="/images/diamond(dark).png"
             className="bg-[#e9f3f2] rounded-full p-3 -mb-0.5 -ml-2"
           />
           <h3 className="font-semibold text-xl -ml-3">Invite Friends</h3>

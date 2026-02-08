@@ -5,7 +5,7 @@ const Onboarding = ({ onFinish }) => {
   return (
     <div className="bg-white h-screen w-full flex flex-col items-center">
       <div className="relative h-full w-full rounded-b-3xl  flex-col items-center justify-center overflow-hidden">
-        <img src="/images/Group 2.png" className="h-[95%]" />
+        <img src="/images/Group2.png" className="h-[95%]" />
         <img src="/images/Coint.png" className="absolute top-36 left-14" />
         <img src="/images/Donut.png" className="absolute top-50 right-12" />
         <img

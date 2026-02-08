@@ -10,7 +10,7 @@ export const transactions = [
     fee: 20.0,
     category: "Freelance",
     status: "Completed",
-    image: "/images/image 13.png",
+    image: "/images/image13.png",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const transactions = [
     fee: 0.0,
     category: "Food & Drink",
     status: "Completed",
-    image: "/images/image 14.png",
+    image: "/images/image14.png",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const transactions = [
     fee: 0.0,
     category: "Transfer",
     status: "Completed",
-    image: "/images/Group 11.png",
+    image: "/images/Group11.png",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const transactions = [
     fee: 1.99,
     category: "Subscription",
     status: "Completed",
-    image: "/images/image 6.png",
+    image: "/images/image6.png",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const transactions = [
     fee: 15.0,
     category: "Salary",
     status: "Completed",
-    image: "/images/image 5.png",
+    image: "/images/image5.png",
   },
   {
     id: 6,
@@ -137,5 +137,5 @@ export const userProfile = {
   balance: 2548.0,
   income: 1840.0,
   expenses: 284.0,
-  avatar: "/images/Group 21.png",
+  avatar: "/images/Group21.png",
 };
