@@ -10,6 +10,7 @@ import { SendHorizontal, Grid2x2Plus, Plus } from "lucide-react";
 import { userProfile } from "../components/data/mockData";
 import { useNavigate } from "react-router-dom";
 import { useTransactions } from "../components/Cards/AddTransactions";
+import Group6 from "/images/Group6.png";
 
 const Wallet = ({ onBack }) => {
   const { transactions } = useTransactions();
@@ -61,8 +62,8 @@ const Wallet = ({ onBack }) => {
           alt="bg"
         />
         <img
-          src="/images/Group6.png"
-          className="absolute inset-0 w-60 object-cover z-0"
+          src={Group6}
+          className="absolute inset-0 w-52 object-cover z-0"
           alt="decor"
         />
         <div className="relative z-10">
@@ -71,7 +72,7 @@ const Wallet = ({ onBack }) => {
       </div>
 
       {/* Main Content */}
-      <div className="bg-white grow rounded-t-[40px] px-6 pt-10 relative -top-20 flex flex-col pb-32">
+      <div className="bg-white grow rounded-t-[40px] px-6 pt-10 relative -top-20 flex flex-col pb-20 -mb-32">
         {/* Balance */}
         <div className="text-center mb-8">
           <p className="text-gray-400 text-sm font-medium">Total Balance</p>

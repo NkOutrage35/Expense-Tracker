@@ -141,14 +141,14 @@ const Statistics = ({ onBack, navigate }) => {
           <select
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
-            className="border rounded-xl py-2 px-4 text-xs font-semibold text-gray-600"
+            className="border rounded-xl py-2 px-2 text-xs font-semibold text-gray-600"
           >
             <option value="expense">Expense</option>
             <option value="income">Income</option>
           </select>
         </div>
 
-        <div className="h-56 mb-10">
+        <div className="h-48 mb-8">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={chartData}>
               <defs>

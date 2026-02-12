@@ -3,6 +3,8 @@ import Header from "../components/navigation/Header";
 import { ChevronDown, PlusCircle } from "lucide-react";
 import { useTransactions } from "../components/Cards/AddTransactions";
 import { useNavigate } from "react-router-dom";
+import Rectangle9 from "/images/Rectangle9.png";
+import Group6 from "/images/Group6.png";
 
 const AddExpense = ({ onBack, onAdd }) => {
   const [type, setType] = useState("expense"); // expense | income
@@ -44,17 +46,17 @@ const AddExpense = ({ onBack, onAdd }) => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gray-100">
+    <div className="relative min-h-screen mb-40 bg-gray-100">
       {/* Header */}
       <div className="sticky h-60">
         <img
-          src="/images/Rectangle9.png"
-          className="absolute inset-0 w-full object-cover z-0"
+          src={Rectangle9}
+          className="absolute inset-0 w-full h-full object-cover z-0"
           alt="bg"
         />
         <img
-          src="/images/Group6.png"
-          className="absolute inset-0 w-60 object-cover z-0"
+          src={Group6}
+          className="absolute inset-0 w-52 object-cover z-0"
           alt="decor"
         />
         <div className="sticky z-10">
@@ -68,7 +70,7 @@ const AddExpense = ({ onBack, onAdd }) => {
       </div>
 
       {/* CARD */}
-      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white rounded-2xl p-6 shadow-2xl space-y-6">
+      <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white rounded-2xl p-6 py-10 shadow-2xl space-y-6">
         {/* TYPE TOGGLE */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-gray-600">
@@ -80,7 +82,7 @@ const AddExpense = ({ onBack, onAdd }) => {
               onClick={() => setType("expense")}
               className={`flex-1 py-2 rounded-4xl font-semibold transition ${
                 isExpense
-                  ? "bg-red-500 text-white shadow-md scale-[1.02]"
+                  ? "bg-[#438883] text-white shadow-md scale-[1.02]"
                   : "text-gray-500"
               }`}
             >
@@ -91,7 +93,7 @@ const AddExpense = ({ onBack, onAdd }) => {
               onClick={() => setType("income")}
               className={`flex-1 py-2 rounded-4xl font-semibold transition ${
                 !isExpense
-                  ? "bg-green-500 text-white shadow-md scale-[1.02]"
+                  ? "bg-[#438883] text-white shadow-md scale-[1.02]"
                   : "text-gray-500"
               }`}
             >
@@ -193,11 +195,7 @@ const AddExpense = ({ onBack, onAdd }) => {
         {/* SUBMIT */}
         <button
           onClick={submit}
-          className={`w-full py-4 rounded-4xl text-lg font-semibold shadow-lg transition active:scale-95 text-white ${
-            isExpense
-              ? "bg-linear-to-r from-red-500 to-red-600"
-              : "bg-linear-to-r from-green-500 to-green-600"
-          }`}
+          className={`w-full py-4 rounded-4xl text-lg font-semibold shadow-lg transition active:scale-95 text-white bg-[#438883]`}
         >
           Add {isExpense ? "Expense" : "Income"}
         </button>
