@@ -6,8 +6,8 @@ const ActionButton = ({ icon: Icon, label, onClick }) => {
         className="
           w-14 h-14 
           rounded-full 
-          border-2 border-[#429690] 
-          text-[#429690]
+          border-2 border-[#438883] 
+          text-[#438883]
           flex items-center justify-center
           active:scale-95
           transition

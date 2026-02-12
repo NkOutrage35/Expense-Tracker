@@ -44,7 +44,7 @@ const StatisticsPDF = React.forwardRef(
         .slice(0, 5);
     }, [filteredByDate, filterType]);
 
-    const accent = filterType === "income" ? "#429690" : "#EF4444";
+    const accent = filterType === "income" ? "#438883" : "#EF4444";
 
     return (
       <div
@@ -77,7 +77,7 @@ const StatisticsPDF = React.forwardRef(
           <SummaryCard
             label="Total Income"
             value={`$${totals.income.toFixed(2)}`}
-            color="#429690"
+            color="#438883"
           />
           <SummaryCard
             label="Total Expenses"

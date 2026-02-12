@@ -30,7 +30,7 @@ const BillDetails = ({ bill, onBack }) => {
       };
 
   return (
-    <div className="bg-[#429690] min-h-screen flex flex-col font-sans relative">
+    <div className="bg-[#438883] min-h-screen flex flex-col font-sans relative">
       <div className="relative h-64">
         <img
           src="/images/Rectangle9.png"
@@ -98,7 +98,7 @@ const BillDetails = ({ bill, onBack }) => {
 
           <PaymentOption
             label="Debit Card"
-            icon={<CreditCard className="text-[#429690]" size={20} />}
+            icon={<CreditCard className="text-[#438883]" size={20} />}
             isSelected={paymentMethod === "debit"}
             onSelect={() => setPaymentMethod("debit")}
           />
@@ -133,7 +133,7 @@ const BillDetails = ({ bill, onBack }) => {
               });
             }
           }}
-          className="w-full  mb-10 mt-4 py-5 bg-[#429690] text-white rounded-3xl font-bold text-base shadow-lg shadow-teal-100 active:scale-95 transition-all"
+          className="w-full  mb-10 mt-4 py-5 bg-[#438883] text-white rounded-3xl font-bold text-base shadow-lg shadow-teal-100 active:scale-95 transition-all"
         >
           Pay Now
         </button>
@@ -151,7 +151,7 @@ const PaymentOption = ({ label, icon, isSelected, onSelect }) => (
     onClick={onSelect}
     className={`flex items-center gap-4 p-5 rounded-3xl border transition-all cursor-pointer ${
       isSelected
-        ? "bg-[#EEF7F6] border-[#429690]"
+        ? "bg-[#EEF7F6] border-[#438883]"
         : "bg-gray-50 border-transparent"
     }`}
   >
@@ -160,17 +160,17 @@ const PaymentOption = ({ label, icon, isSelected, onSelect }) => (
     </div>
     <span
       className={`flex-1 font-bold text-sm ${
-        isSelected ? "text-[#429690]" : "text-gray-400"
+        isSelected ? "text-[#438883]" : "text-gray-400"
       }`}
     >
       {label}
     </span>
     <div
       className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-        isSelected ? "border-[#429690]" : "border-gray-300"
+        isSelected ? "border-[#438883]" : "border-gray-300"
       }`}
     >
-      {isSelected && <div className="w-2.5 h-2.5 bg-[#429690] rounded-full" />}
+      {isSelected && <div className="w-2.5 h-2.5 bg-[#438883] rounded-full" />}
     </div>
   </div>
 );

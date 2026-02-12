@@ -128,7 +128,7 @@ const Statistics = ({ onBack, navigate }) => {
               onClick={() => setActiveTab(tab)}
               className={`flex-1 py-2 text-sm font-semibold rounded-xl ${
                 activeTab === tab
-                  ? "bg-[#429690] text-white shadow-md"
+                  ? "bg-[#438883] text-white shadow-md"
                   : "text-gray-400"
               }`}
             >
@@ -153,8 +153,8 @@ const Statistics = ({ onBack, navigate }) => {
             <AreaChart data={chartData}>
               <defs>
                 <linearGradient id="statGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#429690" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#429690" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#438883" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#438883" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <XAxis dataKey="name" axisLine={false} tickLine={false} />
@@ -163,7 +163,7 @@ const Statistics = ({ onBack, navigate }) => {
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke="#429690"
+                stroke="#438883"
                 strokeWidth={3}
                 fill="url(#statGradient)"
               />

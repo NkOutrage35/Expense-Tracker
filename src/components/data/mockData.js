@@ -10,7 +10,7 @@ export const transactions = [
     fee: 20.0,
     category: "Freelance",
     status: "Completed",
-    image: "/images/image13.png",
+    image: "https://simpleicons.org/icons/upwork.svg",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const transactions = [
     fee: 0.0,
     category: "Food & Drink",
     status: "Completed",
-    image: "/images/image14.png",
+    image: "https://www.google.com/s2/favicons?domain=starbucks.com&sz=128",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ export const transactions = [
     fee: 1.99,
     category: "Subscription",
     status: "Completed",
-    image: "/images/image6.png",
+    image: "https://www.google.com/s2/favicons?domain=youtube.com&sz=128",
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const transactions = [
     fee: 15.0,
     category: "Salary",
     status: "Completed",
-    image: "/images/image5.png",
+    image: "https://www.google.com/s2/favicons?domain=paypal.com&sz=128",
   },
   {
     id: 6,

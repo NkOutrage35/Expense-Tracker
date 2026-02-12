@@ -16,7 +16,7 @@ const ReceiptPDF = React.forwardRef(({ transaction }, ref) => {
   } = transaction;
 
   const isIncome = type === "income";
-  const accent = isIncome ? "#429690" : "#EF4444";
+  const accent = isIncome ? "#438883" : "#EF4444";
 
   return (
     <div

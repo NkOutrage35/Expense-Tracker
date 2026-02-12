@@ -42,14 +42,14 @@ const TransactionItem = ({
               e.stopPropagation();
               if (onPay) onPay();
             }}
-            className="bg-[#EEF7F6] text-[#429690] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e0f0ee] transition-colors"
+            className="bg-[#EEF7F6] text-[#438883] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e0f0ee] transition-colors"
           >
             Pay
           </button>
         ) : (
           <div
             className={`text-lg font-bold ${
-              isIncome ? "text-[#429690]" : "text-red-500"
+              isIncome ? "text-[#438883]" : "text-red-500"
             }`}
           >
             {isIncome ? "+" : "-"}$

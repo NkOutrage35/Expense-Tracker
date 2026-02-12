@@ -36,7 +36,7 @@ const Profile = ({ onBack, navigate }) => {
       <div className="relative z-20 justify-center items-center flex flex-col -mt-12">
         <img src="/images/Group21.png" alt="" />
         <h2 className="font-bold text-xl mt-2">John Doe</h2>
-        <p className="text-[#429690]">john.doe@example.com</p>
+        <p className="text-[#438883]">john.doe@example.com</p>
       </div>
 
       <div className="space-y-4 p-6 mt-4">

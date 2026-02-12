@@ -52,7 +52,7 @@ const Wallet = ({ onBack }) => {
   };
 
   return (
-    <div className="bg-[#429690] min-h-screen flex flex-col font-sans">
+    <div className="bg-[#438883] min-h-screen flex flex-col font-sans">
       {/* Header */}
       <div className="relative h-60">
         <img

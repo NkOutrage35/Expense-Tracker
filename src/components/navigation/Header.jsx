@@ -45,7 +45,7 @@ const Header = ({
         onClick={onRightAction}
         className={`${
           isDarkMode ? "bg-white/20" : "bg-gray-100"
-        } w-10 h-10 flex items-center justify-center rounded-xl transition-all active:bg-[#429690] active:text-white`}
+        } w-10 h-10 flex items-center justify-center rounded-xl transition-all active:bg-[#438883] active:text-white`}
       >
         {rightIcon ? (
           rightIcon

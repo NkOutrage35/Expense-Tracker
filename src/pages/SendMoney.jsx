@@ -45,7 +45,7 @@ const SendMoney = ({ onBack }) => {
           <input
             placeholder="Phone, Wallet ID or Name"
             className="w-full border border-gray-200 rounded-xl p-4 text-sm
-                       focus:outline-none focus:ring-2 focus:ring-[#429690]"
+                       focus:outline-none focus:ring-2 focus:ring-[#438883]"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

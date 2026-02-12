@@ -26,11 +26,11 @@ const BottomNav = ({ currentView }) => {
             >
               <Icon
                 size={22}
-                className={isActive ? "text-[#429690]" : "text-gray-400"}
+                className={isActive ? "text-[#438883]" : "text-gray-400"}
               />
               <span
                 className={`text-xs font-medium ${
-                  isActive ? "text-[#429690]" : "text-gray-400"
+                  isActive ? "text-[#438883]" : "text-gray-400"
                 }`}
               >
                 {label}

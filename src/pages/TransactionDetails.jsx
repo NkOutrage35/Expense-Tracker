@@ -25,7 +25,7 @@ const TransactionDetails = ({ transaction, onBack, navigate }) => {
 
   const isIncome = type === "income";
 
-  const themeColor = isIncome ? "#429690" : "#EF4444";
+  const themeColor = isIncome ? "#438883" : "#EF4444";
   const badgeBg = isIncome ? "#EEF7F6" : "#FEE2E2";
   const dividerColor = "#E5E7EB";
   const mutedText = "#6B7280";
