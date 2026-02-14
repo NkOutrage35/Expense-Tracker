@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from "react";
 import Header from "../components/navigation/Header";
 import BottomNav from "../components/navigation/BottomNav";
+import TransactionDetails from "./TransactionDetails";
 import TransactionItem from "../components/Cards/TransactionItem";
-import { Download, ArrowUpDown } from "lucide-react";
+import { Download, ArrowUp, ArrowDown } from "lucide-react";
 import {
   AreaChart,
   Area,
@@ -105,6 +106,18 @@ const Statistics = ({ onBack, navigate }) => {
 
   const income = transactions.filter((t) => t.type === "income");
   const expenses = transactions.filter((t) => t.type === "expense");
+  const [selectedTransaction, setSelectedTransaction] = useState(null);
+
+  // Transaction Details View
+  if (selectedTransaction) {
+    return (
+      <TransactionDetails
+        transaction={selectedTransaction}
+        onBack={() => setSelectedTransaction(null)}
+        navigate={navigate}
+      />
+    );
+  }
 
   return (
     <div className="bg-white min-h-screen pb-24">
@@ -175,20 +188,36 @@ const Statistics = ({ onBack, navigate }) => {
           <h3 className="font-bold text-lg">
             {filterType === "expense" ? "Top Expenses" : "Top Incomes"}
           </h3>
-          <ArrowUpDown
-            size={20}
-            className={
-              filterType === "expense" ? "text-red-500" : "text-green-500"
-            }
-            onClick={() =>
-              setFilterType(filterType === "expense" ? "income" : "expense")
-            }
-          />
+          {filterType === "expense" ? (
+            <ArrowUp
+              size={20}
+              className={
+                filterType === "expense" ? "text-red-500" : "text-green-500"
+              }
+              onClick={() =>
+                setFilterType(filterType === "expense" ? "income" : "expense")
+              }
+            />
+          ) : (
+            <ArrowDown
+              size={20}
+              className={
+                filterType === "expense" ? "text-red-500" : "text-green-500"
+              }
+              onClick={() =>
+                setFilterType(filterType === "expense" ? "income" : "expense")
+              }
+            />
+          )}
         </div>
 
         <div className="space-y-2">
           {topSpending.map((item) => (
-            <TransactionItem key={item.id} {...item} />
+            <TransactionItem
+              key={item.id}
+              {...item}
+              onClick={() => setSelectedTransaction(item)}
+            />
           ))}
         </div>
       </div>

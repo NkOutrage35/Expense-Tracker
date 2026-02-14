@@ -10,6 +10,7 @@ import { SendHorizontal, Grid2x2Plus, Plus } from "lucide-react";
 import { userProfile } from "../components/data/mockData";
 import { useNavigate } from "react-router-dom";
 import { useTransactions } from "../components/Cards/AddTransactions";
+import Rectangle9 from "/images/Rectangle9.png";
 import Group6 from "/images/Group6.png";
 
 const Wallet = ({ onBack }) => {
@@ -57,7 +58,7 @@ const Wallet = ({ onBack }) => {
       {/* Header */}
       <div className="relative h-60">
         <img
-          src="/images/Rectangle9.png"
+          src={Rectangle9}
           className="absolute inset-0 w-full object-cover z-0"
           alt="bg"
         />

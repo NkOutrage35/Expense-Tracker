@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { useNavigate } from "react-router-dom";
 import BillConfirmation from "../pages/BillConfirmation";
+import Rectangle9 from "/images/Rectangle9.png";
+import Group6 from "/images/Group6.png";
 
 // IMPORT MOCK DATA
 import { userProfile } from "../components/data/mockData";
@@ -17,17 +19,30 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
 
   // Card data seeded from mock user
   const [cardData, setCardData] = useState({
-    name: userProfile.name.toUpperCase(),
-    number: "XXXX XXXX XXXX XXXX",
-    expiry: "MM/YY",
+    name: "",
+    number: "",
+    expiry: "",
+    zip: "",
+    cvc: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setCardData((prev) => ({
-      ...prev,
-      [name]: value.toUpperCase(),
-    }));
+
+    if (["number", "cvc", "zip", "expiry"].includes(name)) {
+      const onlyNum = value.replace(/\D/g, "");
+      setCardData((prev) => ({
+        ...prev,
+        [name]: onlyNum,
+      }));
+    } else if (onlyNum.length > 2) {
+      onlyNum = onlyNum.substring(0, 2) + "/" + value.substring(2, 4);
+    } else {
+      setCardData((prev) => ({
+        ...prev,
+        [name]: value.toUpperCase(),
+      }));
+    }
   };
 
   const savedAccounts = [
@@ -46,13 +61,13 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
       {/* Header */}
       <div className="relative h-60">
         <img
-          src="/images/Rectangle9.png"
+          src={Rectangle9}
           className="absolute inset-0 w-full h-full object-cover z-0"
           alt="bg"
         />
         <img
-          src="/images/Group6.png"
-          className="absolute inset-0 w-60 object-cover z-0"
+          src={Group6}
+          className="absolute inset-0 w-52 object-cover z-0"
           alt="decor"
         />
         <div className="relative z-10">
@@ -81,7 +96,7 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
 
         {/* Cards Tab */}
         {activeTab === "cards" ? (
-          <div className="space-y-6">
+          <div className="space-y-6 -mb-16">
             <div className="flex justify-center mb-4 transform scale-105">
               <DebitCard
                 name={cardData.name}
@@ -109,12 +124,22 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
               <div className="grid grid-cols-2 gap-4">
                 <input
                   name="number"
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={16}
+                  value={cardData.number}
                   onChange={handleInputChange}
                   placeholder="CARD NUMBER"
                   className="border border-gray-200 rounded-xl p-4 text-xs outline-none focus:border-teal-500"
                 />
                 <input
+                  name="cvc"
                   placeholder="CVC"
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={4}
+                  value={cardData.cvc}
+                  onChange={handleInputChange}
                   className="border border-gray-200 rounded-xl p-4 text-xs outline-none focus:border-teal-500"
                 />
                 <input
@@ -124,7 +149,13 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
                   className="border border-gray-200 rounded-xl p-4 text-xs outline-none focus:border-teal-500"
                 />
                 <input
+                  name="zip"
                   placeholder="ZIP"
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={5}
+                  value={cardData.zip}
+                  onChange={handleInputChange}
                   className="border border-gray-200 rounded-xl p-4 text-xs outline-none focus:border-teal-500"
                 />
               </div>
@@ -132,7 +163,7 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
           </div>
         ) : (
           /* Accounts Tab */
-          <div className="space-y-6 px-2">
+          <div className="space-y-6 px-2 -mb-16">
             {/* Saved account */}
             <div>
               <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-4">

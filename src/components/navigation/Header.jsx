@@ -1,6 +1,12 @@
 import React from "react";
 import { ChevronLeft, MoreHorizontal, Bell } from "lucide-react";
-import { Link, NavLink, useMatch, useResolvedPath } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  useMatch,
+  useNavigate,
+  useResolvedPath,
+} from "react-router-dom";
 
 const Header = ({
   title,
@@ -11,6 +17,8 @@ const Header = ({
   rightIcon,
   onRightAction = () => {},
 }) => {
+  const navigate = useNavigate();
+
   return (
     <header
       className={`flex justify-between items-center px-6 py-6 ${
@@ -19,13 +27,13 @@ const Header = ({
     >
       {/* Left Section */}
       {showBack ? (
-        <Link
-        to="/home"
-          
+        <button
+          type="button"
           className="w-10 h-10 flex items-center justify-start transition-active active:scale-90"
+          onClick={() => (onBack ? onBack() : navigate(-1))}
         >
           <ChevronLeft size={24} />
-        </Link>
+        </button>
       ) : (
         <div className="flex flex-col">
           <span className="text-sm opacity-75">Good afternoon,</span>
