@@ -296,7 +296,7 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
                     "_blank",
                   );
                 } else {
-                  navigate("/BillConfirmation", {
+                  navigate("/billConfirmation", {
                     bill,
                     paymentMethod,
                     selectedAccount,

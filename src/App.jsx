@@ -9,6 +9,7 @@ import Wallet from "./pages/Wallet";
 import TransactionDetails from "./pages/TransactionDetails";
 import BillDetails from "./pages/BillDetails";
 import ConnectWallet from "./pages/ConnectWallet";
+import PaymentConfirmation from "./pages/PaymentConfirmation";
 import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import MainLayout from "./MainLayout";
 import SendMoney from "./pages/SendMoney";
@@ -43,6 +44,10 @@ function App() {
             <Route path="/transaction/:id" element={<TransactionDetails />} />
             <Route path="/bill/:id" element={<BillDetails />} />
             <Route path="/connect-wallet" element={<ConnectWallet />} />
+            <Route
+              path="/paymentConfirmation/:id"
+              element={<PaymentConfirmation />}
+            ></Route>
 
             <Route path="*" element={<NotFound />} />
           </Route>

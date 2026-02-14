@@ -3,6 +3,8 @@ import Header from "../components/navigation/Header";
 import BottomNav from "../components/navigation/BottomNav";
 import { CreditCard } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import Rectangle9 from "/images/Rectangle9.png";
+import Group6 from "/images/Group6.png";
 
 const BillDetails = ({ bill, onBack }) => {
   const navigate = useNavigate();
@@ -26,20 +28,20 @@ const BillDetails = ({ bill, onBack }) => {
         price: 11.99,
         fee: 1.99,
         total: 13.98,
-        logo: "/images/youtube-logo.png",
+        logo: "https://www.google.com/s2/favicons?domain=youtube.com&sz=128",
       };
 
   return (
     <div className="bg-[#438883] min-h-screen flex flex-col font-sans relative">
       <div className="relative h-64">
         <img
-          src="/images/Rectangle9.png"
+          src={Rectangle9}
           className="absolute inset-0 w-full h-full object-cover z-0"
           alt="bg"
         />
         <img
-          src="/images/Group6.png"
-          className="absolute inset-0 w-60 object-cover z-0 opacity-40"
+          src={Group6}
+          className="absolute inset-0 w-52 object-cover z-0 opacity-40"
           alt="decor"
         />
         <div className=" z-40 sticky top-0">
@@ -54,7 +56,7 @@ const BillDetails = ({ bill, onBack }) => {
         </div>
       </div>
 
-      <div className="bg-white grow rounded-t-[40px] px-8 pt-12 pb-32 relative z-10 -mt-16 flex flex-col shadow-2xl overflow-y-auto">
+      <div className="bg-white grow rounded-t-[40px] px-8 pt-12 pb-32 relative z-10 -mt-16 -mb-28 flex flex-col shadow-2xl overflow-y-auto ">
         <div className="flex items-center gap-4 mb-10">
           <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center shadow-sm overflow-hidden">
             <img
@@ -106,11 +108,7 @@ const BillDetails = ({ bill, onBack }) => {
           <PaymentOption
             label="Paypal"
             icon={
-              <img
-                src="/images/image5.png"
-                className="w-5 h-5"
-                alt="paypal"
-              />
+              <img src="/images/image5.png" className="w-5 h-5" alt="paypal" />
             }
             isSelected={paymentMethod === "paypal"}
             onSelect={() => setPaymentMethod("paypal")}
@@ -125,7 +123,7 @@ const BillDetails = ({ bill, onBack }) => {
                 "_blank",
               );
             } else {
-              navigate("/connect-wallet", {
+              navigate("/paymentConfirmation/", {
                 state: {
                   bill: details,
                   paymentMethod,
