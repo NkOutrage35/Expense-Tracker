@@ -44,14 +44,13 @@ const BillDetails = ({ bill, onBack }) => {
           className="absolute inset-0 w-52 object-cover z-0 opacity-40"
           alt="decor"
         />
-        <div className=" z-40 sticky top-0">
+        <div className=" z-10 sticky top-0">
           <Header
             title="Bill Details"
             showBack={true}
             isDarkMode={true}
             onBack={onBack}
             showOptions={true}
-            className={"sticky"}
           />
         </div>
       </div>
@@ -123,7 +122,7 @@ const BillDetails = ({ bill, onBack }) => {
                 "_blank",
               );
             } else {
-              navigate("/paymentConfirmation/", {
+              navigate(`/paymentConfirmation/${details.id}`, {
                 state: {
                   bill: details,
                   paymentMethod,

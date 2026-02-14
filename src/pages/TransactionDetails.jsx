@@ -4,6 +4,8 @@ import BottomNav from "../components/navigation/BottomNav";
 import { ChevronUp } from "lucide-react";
 import { usePDF } from "react-to-pdf";
 import ReceiptPDF from "../components/PDF/ReceiptPDF";
+import Rectangle9 from "/images/Rectangle9.png";
+import Group6 from "/images/Group6.png";
 
 const TransactionDetails = ({ transaction, onBack, navigate }) => {
   const { toPDF, targetRef } = usePDF({
@@ -35,12 +37,12 @@ const TransactionDetails = ({ transaction, onBack, navigate }) => {
     <div className="min-h-screen bg-white pb-24 font-sans">
       <div className="relative h-60">
         <img
-          src="/images/Rectangle9.png"
+          src={Rectangle9}
           className="absolute inset-0 w-full h-full object-cover"
           alt=""
         />
         <img
-          src="/images/Group6.png"
+          src={Group6}
           className="absolute inset-0 w-60 object-cover opacity-40"
           alt=""
         />
