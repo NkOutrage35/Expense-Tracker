@@ -3,6 +3,8 @@ import { transactions } from "../components/data/mockData";
 import { ArrowRight } from "lucide-react";
 import Header from "../components/navigation/Header";
 import { useState } from "react";
+import Rectangle9 from "/images/Rectangle9.png";
+import Group6 from "/images/Group6.png";
 
 const SendMoney = ({ onBack }) => {
   const navigate = useNavigate();
@@ -24,13 +26,13 @@ const SendMoney = ({ onBack }) => {
       {/* Header */}
       <div className="relative h-60">
         <img
-          src="/images/Rectangle9.png"
+          src={Rectangle9}
           className="absolute inset-0 w-full object-cover z-0"
           alt="bg"
         />
         <img
-          src="/images/Group6.png"
-          className="absolute inset-0 w-60 object-cover z-0"
+          src={Group6}
+          className="absolute inset-0 w-52 object-cover z-0"
           alt="decor"
         />
         <div className="sticky z-10">

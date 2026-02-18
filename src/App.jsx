@@ -17,6 +17,11 @@ import TransactionItem from "./components/Cards/TransactionItem";
 import { TransactionAdder } from "./components/Cards/AddTransactions";
 import BillConfirmation from "./pages/BillConfirmation";
 import NotFound from "./pages/404";
+import AccountInfo from "./components/profile/AccountInfo";
+import PersonalProfile from "./components/profile/PersonalProfile";
+import MessageCenter from "./components/profile/MessageCenter";
+import LoginSecurity from "./components/profile/Login_Security";
+import DataPrivacy from "./components/profile/Data_Privacy";
 
 function App() {
   return (
@@ -39,6 +44,14 @@ function App() {
               path="/billConfirmation"
               element={<BillConfirmation />}
             ></Route>
+
+
+            {/* Profile navigation */}
+            <Route path="/account" element={<AccountInfo />}></Route>
+            <Route path="/dataPrivacy" element={<DataPrivacy />}></Route>
+            <Route path="/security" element={<LoginSecurity />}></Route>
+            <Route path="/messageCenter" element={<MessageCenter />}></Route>
+            <Route path="/personal" element={<PersonalProfile />}></Route>
 
             {/* Dynamic navigation */}
             <Route path="/transaction/:id" element={<TransactionDetails />} />

@@ -210,7 +210,7 @@ const ConnectWallet = ({ onBack, bill, paymentMethod }) => {
             {/* New Link */}
             <div className="space-y-4">
               <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-4">
-                Saved Accounts
+                CHOOSE PAYMENT METHOD
               </h4>
               {[
                 {
