@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { transactions } from "../components/data/mockData";
 import { ArrowRight } from "lucide-react";
 import Header from "../components/navigation/Header";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Rectangle9 from "/images/Rectangle9.png";
 import Group6 from "/images/Group6.png";
 
@@ -10,16 +10,20 @@ const SendMoney = ({ onBack }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
-  const recentRecipients = Array.from(
-    new Map(
-      transactions
-        .filter((tx) => tx.status === "Completed")
-        .filter((tx) =>
-          tx.name.toLowerCase().includes(searchTerm.toLowerCase()),
-        )
-        .map((tx) => [tx.name, tx]),
-    ).values(),
-  ).slice(0, 5);
+  const cachedData = useMemo(() => {
+    const recentRecipients = Array.from(
+      new Map(
+        transactions
+          .filter((tx) => tx.status === "Completed")
+          .filter((tx) =>
+            tx.name.toLowerCase().includes(searchTerm.toLowerCase()),
+          )
+          .map((tx) => [tx.name, tx]),
+      ).values(),
+    ).slice(0, 5);
+
+    return recentRecipients;
+  }, [transactions, searchTerm]);
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
