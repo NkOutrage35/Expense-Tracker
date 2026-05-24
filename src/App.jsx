@@ -14,7 +14,7 @@ import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import MainLayout from "./MainLayout";
 import SendMoney from "./pages/SendMoney";
 import TransactionItem from "./components/Cards/TransactionItem";
-import { TransactionAdder } from "./components/Cards/AddTransactions";
+import { TransactionsContext } from "./components/Cards/AddTransactions";
 import BillConfirmation from "./pages/BillConfirmation";
 import NotFound from "./pages/404";
 import AccountInfo from "./components/profile/AccountInfo";
@@ -25,7 +25,7 @@ import DataPrivacy from "./components/profile/Data_Privacy";
 
 function App() {
   return (
-    <TransactionAdder>
+    <TransactionsContext>
       <div className="font-sans">
         <Routes>
           {/* onboarding */}
@@ -44,7 +44,6 @@ function App() {
               path="/billConfirmation"
               element={<BillConfirmation />}
             ></Route>
-
 
             {/* Profile navigation */}
             <Route path="/account" element={<AccountInfo />}></Route>
@@ -66,7 +65,7 @@ function App() {
           </Route>
         </Routes>
       </div>
-    </TransactionAdder>
+    </TransactionsContext>
   );
 }
 
