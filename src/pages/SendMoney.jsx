@@ -10,20 +10,25 @@ const SendMoney = ({ onBack }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
-  const cachedData = useMemo(() => {
-    const recentRecipients = Array.from(
+  //base filtration
+  const processedRecipients = useMemo(() => {
+    return Array.from(
       new Map(
         transactions
           .filter((tx) => tx.status === "Completed")
-          .filter((tx) =>
-            tx.name.toLowerCase().includes(searchTerm.toLowerCase()),
-          )
           .map((tx) => [tx.name, tx]),
       ).values(),
-    ).slice(0, 5);
+    );
+  }, [transactions]);
+  // UI filer Layer (faster)
+  const recentRecipients = useMemo(() => {
+    // fx = filtered recipient array
+    const fx = processedRecipients.filter((tx) =>
+      tx.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
 
-    return recentRecipients;
-  }, [transactions, searchTerm]);
+    return fx.slice(0, 5);
+  }, [processedRecipients, searchTerm]);
 
   return (
     <div className="bg-white min-h-screen flex flex-col">
