@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Header from "../components/navigation/Header";
 import BottomNav from "../components/navigation/BottomNav";
 import { CreditCard } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useTransactions } from "../components/Cards/AddTransactions";
 import Rectangle9 from "/images/Rectangle9.png";
 import Group6 from "/images/Group6.png";
 
@@ -10,8 +11,12 @@ const BillDetails = ({ bill, onBack }) => {
   const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState("debit");
   const location = useLocation();
+  const { id } = useParams();
+  const { transactions } = useTransactions();
 
-  const rawBill = location.state?.bill;
+  const databaseBill = transactions.find((t) => t.id.toString() === id);
+
+  const rawBill = location.state?.bill || databaseBill;
 
   const details = rawBill
     ? {
