@@ -21,8 +21,8 @@ const Header = ({
 
   return (
     <header
-      className={`flex justify-between items-center px-6 py-6 ${
-        isDarkMode ? "text-white" : "text-gray-800"
+      className={`flex justify-between items-center px-6 py-6 sticky top-0 z-50 ${
+        isDarkMode ? "text-white bg-transparent" : "text-gray-800 bg-white"
       }`}
     >
       {/* Left Section */}

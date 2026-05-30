@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import Header from "../components/navigation/Header";
 import BottomNav from "../components/navigation/BottomNav";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useTransactions } from "../components/Cards/AddTransactions";
 import { ChevronUp, ChevronDown, Copy, Check } from "lucide-react";
 import Rectangle9 from "/images/Rectangle9.png";
 import Group6 from "/images/Group6.png";
 
-const PaymentConfirmation = ({ transaction, onBack, navigate }) => {
+const PaymentConfirmation = ({ onBack }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { id } = useParams();
+  const { transactions } = useTransactions();
+
   // Use the theme colors from your provided code
   const themeColor = "#438883";
   const mutedText = "#6B7280";
@@ -19,14 +26,45 @@ const PaymentConfirmation = ({ transaction, onBack, navigate }) => {
     time = "08:15 AM",
     fee = 1.99,
     transactionId = "2092913832472..",
-  } = transaction || {};
+  } = transactions || {};
 
   const [isExpanded, setIsExpanded] = useState(true);
 
+  const databaseBill = transactions.find((t) => t.id.toString() === id);
+  const rawBill = location.state?.bill || databaseBill;
+
+  if (!rawBill) {
+    return (
+      <div className="min-h-screen bg-[#438883] text-white flex items-center justify-center">
+        Loading Receipt Data...
+      </div>
+    );
+  }
+
+  const details = {
+    name: rawBill.name,
+    amount: Math.abs(rawBill.amount ?? rawBill.price ?? 0),
+    date: rawBill.date || "Feb 28, 2022",
+    time: rawBill.time || "08:15 AM",
+    fee: 1.99,
+    transactionId: rawBill.transactionId || `TXN-${rawBill.id || Date.now()}`,
+    paymentMethod:
+      location.state?.paymentMethod === "paypal" ? "PayPal" : "Debit Card",
+  };
+
   return (
-    <div className="min-h-screen bg-white pb-24 font-sans">
+    <div className="h-10 bg-white ">
       {/* Background Header Section */}
       <div className="relative h-60">
+        <div className="sticky top-0 z-50 bg-transparent">
+          <Header
+            title="Bill Details"
+            showBack={true}
+            isDarkMode={true}
+            onBack={onBack}
+            showOptions={true}
+          />
+        </div>
         <img
           src={Rectangle9}
           className="absolute inset-0 w-full h-full object-cover"
@@ -37,14 +75,11 @@ const PaymentConfirmation = ({ transaction, onBack, navigate }) => {
           className="absolute inset-0 w-52 object-cover opacity-90"
           alt=""
         />
-        <div className="sticky z-10">
-          <Header title="Bill Payment" showBack isDarkMode onBack={onBack} />
-        </div>
       </div>
 
       {/* White Card Content */}
       <div
-        className="relative -top-20 rounded-t-[40px] bg-white px-8 pt-20 -mb-36 flex flex-col items-center"
+        className="relative -top-20 rounded-t-[40px] bg-white px-8 pt-20 flex flex-col items-center"
         style={{ color: textMain }}
       >
         {/* Success Icon */}
@@ -58,9 +93,9 @@ const PaymentConfirmation = ({ transaction, onBack, navigate }) => {
         </div>
 
         {/* Title Section */}
-        <div className="text-center mt-16 mb-8">
+        <div className="text-center mt-8 mb-8">
           <h2 className="text-2xl font-bold text-[#438883]">
-            Payment Successfully
+            Payment Successful
           </h2>
           <p style={{ color: mutedText }} className="text-sm mt-1">
             {name}
@@ -82,7 +117,7 @@ const PaymentConfirmation = ({ transaction, onBack, navigate }) => {
           </button>
 
           {isExpanded && (
-            <div className="space-y-5">
+            <div className="space-y-3 mb-6">
               <DetailRow label="Payment method" value="Debit Card" />
               <DetailRow
                 label="Status"
@@ -104,18 +139,16 @@ const PaymentConfirmation = ({ transaction, onBack, navigate }) => {
             </div>
           )}
 
-          <div className="my-8 h-px bg-gray-100" />
-
           {/* Pricing Section */}
-          <div className="space-y-5 mb-10">
-            <DetailRow label="Price" value={`$ ${amount.toFixed(2)}`} />
-            <DetailRow label="Fee" value={`- $ ${fee.toFixed(2)}`} />
+          <div className="space-y-3 mb-5">
+            <DetailRow label="Price" value={`$ ${details.amount.toFixed(2)}`} />
+            <DetailRow label="Fee" value={`- $ ${details.fee.toFixed(2)}`} />
             <div className="flex justify-between items-center pt-2">
               <span style={{ color: mutedText }} className="font-bold">
                 Total
               </span>
               <span className="font-bold text-lg">
-                $ {(amount + fee).toFixed(2)}
+                $ {(details.amount + fee).toFixed(2)}
               </span>
             </div>
           </div>

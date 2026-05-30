@@ -34,23 +34,29 @@ const SendMoney = ({ onBack }) => {
     <div className="bg-white min-h-screen flex flex-col">
       {/* Header */}
       <div className="relative h-60">
+        <div className="sticky top-0 z-50 bg-transparent">
+          <Header
+            title="Bill Details"
+            showBack={true}
+            isDarkMode={true}
+            onBack={onBack}
+            showOptions={true}
+          />
+        </div>
         <img
           src={Rectangle9}
-          className="absolute inset-0 w-full object-cover z-0"
-          alt="bg"
+          className="absolute inset-0 w-full h-full object-cover"
+          alt=""
         />
         <img
           src={Group6}
-          className="absolute inset-0 w-52 object-cover z-0"
-          alt="decor"
+          className="absolute inset-0 w-52 object-cover opacity-90"
+          alt=""
         />
-        <div className="sticky z-10">
-          <Header title="Send" showBack isDarkMode onBack={onBack} />
-        </div>
       </div>
 
       {/* Content */}
-      <div className="bg-white grow rounded-t-[40px] px-6 pt-8 relative -top-20 pb-32">
+      <div className="bg-white grow rounded-t-[40px] px-6 pt-8 relative -top-20">
         {/* Input */}
         <div className="mb-6">
           <input

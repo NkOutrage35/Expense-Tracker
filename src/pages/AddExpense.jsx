@@ -48,25 +48,26 @@ const AddExpense = ({ onBack, onAdd }) => {
   return (
     <div className="relative min-h-screen mb-40 bg-gray-100">
       {/* Header */}
-      <div className="sticky h-60">
+      <div className="relative h-60">
+        <div className="sticky top-0 z-50 bg-transparent">
+          <Header
+            title={`Add ${isExpense ? "Expense" : "Income"}`}
+            showBack={true}
+            isDarkMode={true}
+            onBack={onBack}
+            showOptions={true}
+          />
+        </div>
         <img
           src={Rectangle9}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          alt="bg"
+          className="absolute inset-0 w-full h-full object-cover"
+          alt=""
         />
         <img
           src={Group6}
-          className="absolute inset-0 w-52 object-cover z-0"
-          alt="decor"
+          className="absolute inset-0 w-52 object-cover opacity-90"
+          alt=""
         />
-        <div className="sticky z-10">
-          <Header
-            title={`Add ${isExpense ? "Expense" : "Income"}`}
-            showBack
-            isDarkMode
-            onBack={onBack}
-          />{" "}
-        </div>
       </div>
 
       {/* CARD */}
